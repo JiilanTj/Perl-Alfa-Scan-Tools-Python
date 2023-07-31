@@ -6,6 +6,33 @@ putih = "\033[97m"
 blue = "\033[94m"
 merah = "\033[91m"
 reset = "\033[0m"
+hijau = "\033[92m"
+biru = "\033[96m"
+ungu = "\033[95m"
+
+# Ascii Art "APT IS ME!" dengan gradasi warna
+ascii_art = blue + r"""
+
+ 
+ $$$$$$\  $$$$$$$\ $$$$$$$$\       $$$$$$\  $$$$$$\        $$\      $$\ $$$$$$$$\ $$\ $$\ $$\ 
+$$  __$$\ $$  __$$\\__$$  __|      \_$$  _|$$  __$$\       $$$\    $$$ |$$  _____|$$ |$$ |$$ |
+$$ /  $$ |$$ |  $$ |  $$ |           $$ |  $$ /  \__|      $$$$\  $$$$ |$$ |      $$ |$$ |$$ |
+$$$$$$$$ |$$$$$$$  |  $$ |           $$ |  \$$$$$$\        $$\$$\$$ $$ |$$$$$\    $$ |$$ |$$ |
+$$  __$$ |$$  ____/   $$ |           $$ |   \____$$\       $$ \$$$  $$ |$$  __|   \__|\__|\__|
+$$ |  $$ |$$ |        $$ |           $$ |  $$\   $$ |      $$ |\$  /$$ |$$ |                  
+$$ |  $$ |$$ |        $$ |         $$$$$$\ \$$$$$$  |      $$ | \_/ $$ |$$$$$$$$\ $$\ $$\ $$\ 
+\__|  \__|\__|        \__|         \______| \______/       \__|     \__|\________|\__|\__|\__|
+                                                                                              
+                                                                                                             
+ _____________________________________________________________________________________________
+ |                                                                                           |
+ |  Tools: Priv8 Tools Perl Alfa Scan                                                        |
+ |  By   : Palvia                                                                            |
+ |  License : Under MIT License                                                              |
+ |                                                                                           |
+ |___________________________________________________________________________________________|                                                                                                     
+
+""" + reset
 
 def alfaa(domainn):
     # Definisikan fungsi alfaa() seperti pada skrip yang diberikan
@@ -177,8 +204,16 @@ def alfaa(domainn):
     except:
         print(kuning + '-|' + putih + domainn + blue + ' ==> ' + merah + '  Bad Host   '+ reset)
 
+
 def main():
     while True:
+        # Menampilkan Ascii Art "APT IS ME!" dengan gradasi warna
+        lines = ascii_art.split("\n")
+        gradasi_ascii_art = ""
+        for i, line in enumerate(lines):
+            gradasi_ascii_art += [kuning, merah, biru, hijau, ungu][i % 5] + line + reset + "\n"
+        print(gradasi_ascii_art)
+
         print("Apakah Anda ingin menggunakan tools?")
         print("1. Iya")
         print("2. Tidak")
@@ -206,4 +241,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
